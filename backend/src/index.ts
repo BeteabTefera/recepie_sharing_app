@@ -3,6 +3,11 @@ dotenv.config();
 import express, { Application, Request, Response } from "express";
 import cors from "cors";
 import helmet from "helmet";
+import passport from "passport";
+import fileUpload from "express-fileupload";
+import { connect } from "mongoose";
+import { authenticate } from "./config";
+import { authRouter, recipeRouter } from "./routes";
 
 const app: Application = express();
 
@@ -11,6 +16,26 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 app.use(helmet());
 
+app.use(
+    fileUpload({
+      limits: { fileSize: 50 * 1024 * 1024 },
+      abortOnLimit: true,
+    })
+  );
+  
+app.use(passport.initialize());
+
+// Passport config
+authenticate(passport);
+
+
+app.use('/auth', authRouter);
+app.use('/recipe', recipeRouter);
+
+app.get('/ping', (req: Request, res: Response) => {
+    res.send('pong');
+});
+
 app.all('*', (req: Request, res: Response) => {
     res.status(404).json({
         status: 'fail',
@@ -18,6 +43,13 @@ app.all('*', (req: Request, res: Response) => {
     });
 });
 
+const runDB = async () => {
+    connect(process.env.MONGODB_URI as string)
+    .then(() => console.log("Database connected"))
+    .catch((error) => console.log("Error connecting to database", error));
+};
+
+runDB();
 const PORT = (process.env.PORT as unknown as number) || 5000;
 
 
