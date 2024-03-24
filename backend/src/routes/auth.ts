@@ -1,10 +1,10 @@
-import { Router } from "express";
-
-import { registerOrLogin } from "./../controllers/auth";
-import { validate } from "./../middlewares";
+import express from "express";
+import { validate } from "../middlewares";
 import { joinSchema } from "../schema-validations";
 
-const router = Router();
+import { registerOrLogin } from "./../controllers/auth";
+
+const router = express.Router();
 
 router.post("/join", validate(joinSchema), registerOrLogin);
 
