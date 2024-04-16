@@ -1,1 +1,3 @@
-# recepie_sharing_app
+# recepie_sharing_app 
+
+Contributors:
