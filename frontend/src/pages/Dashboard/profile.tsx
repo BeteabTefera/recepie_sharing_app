@@ -50,23 +50,27 @@ export const Profile = () => {
       };
 
     const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
+      //   e.preventDefault();
     
-        if (!image) {
-          return cogoToast.error("Please add an image ");
-        }
+      //   if (!image) {
+      //     return cogoToast.error("Please add an image ");
+      //   }
     
-        if (!state?.title || !state?.description || !state?.ingredients) {
-          return cogoToast.error("Please fill the missing field ");
-        }
-        const payload = {
-          image,
-          ...state,
-        };
-        await addRecipe(payload);
-        setState({ title: "", note: "", description: "", ingredients: "" });
-        setImage(null);
-        navigate("/dashboard/myrecipes");
+      //   // if (!state?.title || !state?.description || !state?.ingredients) {
+      //   //   return cogoToast.error("Please fill the missing field ");
+      //   // }
+      //   const payload = {
+      //     image,
+      //     ...state,
+      //   };
+      //   await addRecipe(payload);
+      //   setState({ title: "", note: "", description: "", ingredients: "" });
+      //   setImage(null);
+      //   navigate("/dashboard/myrecipes");
+      
+      //for now navigate to the dashboard
+      cogoToast.success("Profile Updated");
+      navigate("/dashboard/");
       };
     const onChange = (
         e: FormEvent<HTMLInputElement> | FormEvent<HTMLTextAreaElement>
