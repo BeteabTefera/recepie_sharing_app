@@ -66,7 +66,10 @@ export const AddRecipe = () => {
         await addRecipe(payload);
         setState({ title: "", note: "", description: "", ingredients: "" });
         setImage(null);
-        navigate("/dashboard/myrecipes");
+        navigate("/dashboard");
+        console.log("Recipe added successfully");
+        refreshPage();
+        console.log("Page refreshed");
       };
     const onChange = (
         e: FormEvent<HTMLInputElement> | FormEvent<HTMLTextAreaElement>
@@ -75,6 +78,10 @@ export const AddRecipe = () => {
     
         setState({ ...state, [name]: value });
       };
+    const refreshPage = () => {
+        window.location.reload(); // Refresh the current page
+      };
+    
   return (
     
     <Suspense fallback={<UILoader />}>
@@ -137,6 +144,7 @@ export const AddRecipe = () => {
                 />
             </div>
         </Form>
+
         </div>
     </Suspense>
  
