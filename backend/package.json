@@ -12,6 +12,9 @@
     "lint": "npx eslint --ignore-path .gitignore --ext .js,.ts --fix",
     "format": "npx prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\""
   },
+  "engines": {
+    "yarn": ">=1.22.17"
+  },
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "buffer-to-stream": "^1.0.0",
