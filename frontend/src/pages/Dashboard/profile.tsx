@@ -12,7 +12,8 @@ import { validateImageType } from "../../utils";
 
 export const Profile = () => {
     const navigate = useNavigate();
-    const { loading, addRecipe } = useRecipe();
+    // const { loading, addRecipe } = useRecipe();
+    const { loading, } = useRecipe();
     const [state, setState] = useState<IRECIPE>({
       title: "",
       note: "",
@@ -50,7 +51,7 @@ export const Profile = () => {
       };
 
     const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
-      //   e.preventDefault();
+      e.preventDefault();
     
       //   if (!image) {
       //     return cogoToast.error("Please add an image ");
