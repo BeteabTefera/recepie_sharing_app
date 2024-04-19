@@ -5,7 +5,7 @@ import { validateEmail } from '../../utils';
 import { AuthenticationContext } from '../../context';
 import { useNavigate } from 'react-router-dom';
 import cogoToast from 'cogo-toast';
-import logo from '../../assets/logo.png';
+// import logo from '../../assets/logo.png';
 
 
 

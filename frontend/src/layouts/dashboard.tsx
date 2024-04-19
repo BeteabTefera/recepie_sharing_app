@@ -23,7 +23,8 @@ export const DashboardLayout = () => {
         }
       }, []);
 
-    const { onLogout, loading, user } = useContext(AuthenticationContext) as AUTH_TYPE;
+    // const { onLogout, loading, user } = useContext(AuthenticationContext) as AUTH_TYPE;
+    const { onLogout, user } = useContext(AuthenticationContext) as AUTH_TYPE;
     const [isOpen, setIsOpen] = useState<boolean>(false);
     const handleIsOpen = () => {
         setIsOpen((prev) => !prev);
