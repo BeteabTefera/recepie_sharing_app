@@ -4,7 +4,7 @@ import {
     v2 as cloudinary,
   } from "cloudinary";
   import toStream from "buffer-to-stream";
-  import sharp from "sharp";
+  // import sharp from "sharp";
   
   cloudinary.config({
     cloud_name: process.env.CLOUDINARY_CLOUD_NAME as string,
@@ -18,10 +18,10 @@ import {
     folder: string
   ): Promise<UploadApiResponse | UploadApiErrorResponse> => {
     //resize image using sharp
-    const bufferOfFile = await sharp(file)
-      .resize(1870)
-      .webp({ quality: 90 })
-      .toBuffer();
+    // const bufferOfFile = await sharp(file)
+    //   .resize(1870)
+    //   .webp({ quality: 90 })
+    //   .toBuffer();
   
     return new Promise((resolve, reject) => {
       const upload = cloudinary.uploader.upload_stream(
@@ -31,6 +31,6 @@ import {
         }
       );
   
-      toStream(bufferOfFile).pipe(upload), { resource_type: "auto", folder };
+      toStream(file).pipe(upload), { resource_type: "auto", folder };
     });
   };
