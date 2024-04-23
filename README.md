@@ -3,17 +3,17 @@
 Discover the joy of cooking with Recepie_sharing_app, the app that brings passionate home cooks together from around the world. Whether you're looking for a quick dinner solution or an intricate baking project, CookShare offers a diverse range of user-contributed recipes that are as unique as our community.
 
 **Contributors:**
-Prashant Dhaubhadel
-Beetab Terferra
+Prashant Dhaubhadel,
+Beteab Tereferra,
 Muhammad Arham
 
 **Built With:**
 
-React
-TailwindCSS
-ExpressJs
-TypeScript
-NodeJs
+React,
+TailwindCSS,
+ExpressJs,
+TypeScript,
+NodeJs,
 MongoDB
 
 Live Demo
