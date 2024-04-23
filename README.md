@@ -14,11 +14,10 @@ TailwindCSS
 ExpressJs
 TypeScript
 NodeJs
-Cloudinary
 MongoDB
 
 Live Demo
-[Link??](https://recipe-sharing-007.vercel.app/)
+(https://recipe-sharing-007.vercel.app/)
 
 How To get Started
 To get a local copy up and running follow these simple example steps.
@@ -78,7 +77,7 @@ $ yarn lint
 $ yarn format
 
 Usage
-While inside the foodie/backend, run yarn dev. This will open a development server.
+While inside the recepie_sharing_app/backend, run yarn dev. This will open a development server.
 
 License
 This project is MIT licensed.
